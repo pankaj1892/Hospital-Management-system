@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+    </header>
+
+    <nav>
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="#search">Search</a></li>
+            <li><a href="#manage-doctors">Manage Doctors</a></li>
+            <li><a href="#manage-patients">Manage Patients</a></li>
+            <li><a href="#appointments">Appointments</a></li>
+            <li><a href="#billing">Billing</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Search Section -->
+        <section id="search">
+            <h2>Search</h2>
+            <form action="searchAll" method="get">
+                <label for="keyword">Search Keyword:</label>
+                <input type="text" id="keyword" name="keyword" placeholder="Enter name or ailment" required>
+                <label for="type">Search Type:</label>
+                <select id="type" name="type" required>
+                    <option value="doctor">Doctor</option>
+                    <option value="patient">Patient</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Manage Doctors Section -->
+        <section id="manage-doctors">
+            <h2>Manage Doctors</h2>
+
+            <!-- Add Doctor -->
+            <h3>Add Doctor</h3>
+            <form action="AddDoctor" method="get">
+                <label for="addDoctor">Name:</label>
+                <input type="text" id="addDoctor" name="addDoctor" required>
+                <label for="specialization">Specialization:</label>
+                <input type="text" id="specialization" name="specialization" required>
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" required>
+                <button type="submit">Add Doctor</button>
+            </form>
+
+            <!-- Update Doctor -->
+            <h3>Update Doctor</h3>
+            <form action="updateDoctor" method="get">
+                <label for="id">Doctor ID:</label>
+                <input type="text" id="id" name="id" required>
+                <label for="doctorName">Name:</label>
+                <input type="text" id="doctorName" name="doctorName" required>
+                <label for="specialization">Specialization:</label>
+                <input type="text" id="specialization" name="specialization" required>
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" required>
+                <button type="submit">Update Doctor</button>
+            </form>
+
+            <!-- Delete Doctor -->
+            <h3>Delete Doctor</h3>
+            <form action="deletedoctor" method="get">
+                <label for="id">Doctor ID:</label>
+                <input type="text" id="id" name="id" required>
+                <button type="submit">Delete Doctor</button>
+            </form>
+
+            <!-- View All Doctors -->
+            <h3>View Doctors</h3>
+            <a href="doctors">View All Doctors</a>
+            <a href="sortingdoctors">View Doctors Sorted by Name</a>
+        </section>
+
+        <hr>
+
+        <!-- Manage Patients Section -->
+        <section id="manage-patients">
+            <h2>Manage Patients</h2>
+
+            <!-- Add Patient -->
+            <h3>Add Patient</h3>
+            <form action="AddPatient" method="get">
+                <label for="patientName">Name:</label>
+                <input type="text" id="patientName" name="patientName" required>
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" required>
+                <label for="patientContact">Contact:</label>
+                <input type="text" id="patientContact" name="patientContact" required>
+                <label for="ailment">Ailment:</label>
+                <input type="text" id="ailment" name="ailment" required>
+                <button type="submit">Add Patient</button>
+            </form>
+
+            <!-- Delete Patient -->
+            <h3>Delete Patient</h3>
+            <form action="deletepatient" method="get">
+                <label for="id">Patient ID:</label>
+                <input type="text" id="id" name="id" required>
+                <button type="submit">Delete Patient</button>
+            </form>
+
+            <!-- View All Patients -->
+            <h3>View Patients</h3>
+            <a href="patients">View All Patients</a>
+            <a href="sortingpatients">View Patients Sorted by Name</a>
+        </section>
+
+        <hr>
+
+        <!-- Appointments Section -->
+        <section id="appointments">
+            <h2>Appointments</h2>
+
+            <!-- Create Appointment -->
+            <h3>Create Appointment</h3>
+            <form action="createAppointment" method="get">
+                <label for="id">Appointment ID:</label>
+                <input type="text" id="id" name="id" required>
+                <label for="patientId">Patient ID:</label>
+                <input type="text" id="patientId" name="patientId" required>
+                <label for="doctorId">Doctor ID:</label>
+                <input type="text" id="doctorId" name="doctorId" required>
+                <label for="appointmentDate">Appointment Date:</label>
+                <input type="date" id="appointmentDate" name="appointmentDate" required>
+                <button type="submit">Create Appointment</button>
+            </form>
+
+            <!-- View All Appointments -->
+            <h3>View Appointments</h3>
+            <a href="allAppointment">View All Appointments</a>
+        </section>
+
+        <hr>
+
+        <!-- Billing Section -->
+        <section id="billing">
+            <h2>Billing</h2>
+            <form action="bill" method="get">
+                <label for="billPatientId">Patient ID:</label>
+                <input type="text" id="billPatientId" name="patientId" required>
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" required>
+                <button type="submit">Generate Bill</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hospital Management System. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
